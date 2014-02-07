@@ -1,0 +1,18 @@
+{
+   'name': 'Extra reports',
+   'version': '0.01',
+   'category': 'Reports',
+   'description': "OpenERP module that adds reports to existing modules in OpenERP.",
+   'author': 'Covetel R.S',
+   'website': 'http://www.covetel.com.ve',
+   'depends': ['stock', 'procurement', 'board', 'sale'],
+   'data': [],
+   'init_xml': [],
+   'update_xml': [
+       'reports.xml',
+   ],
+   'demo_xml': [],
+   'test': [],
+   'installable': True,
+   'active': False,
+}
