@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <report auto="False" id="extra_report_sale_order" model="sale.order" name="sale.order_extra" rml="openerp-extra-reports/report/sale_order.rml" string="Sale Order Extra" />
+        <report header="False" auto="False" id="extra_report_sale_order" model="sale.order" name="sale.order_extra" rml="openerp-extra-reports/report/sale_order.rml" string="Sale Order Extra" />
     </data>
 </openerp>

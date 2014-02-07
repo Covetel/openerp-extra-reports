@@ -1,17 +1,14 @@
 <?xml version="1.0"?>
 <document filename="Sales Order.pdf">
-  <template pageSize="596,842" title="Sales Order" author="OpenERP S.A.(sales@openerp.com)">
+  <template pageSize="596,842" title="Sales Order" author="OpenERP S.A.(sales@openerp.com)" showBoundary="1">
     <pageTemplate id="first" pageSize="596,842">
-		<pageGraphics>
-       		<setFont name="Helvetica-Bold" size="18"/>
-            <!--<drawString x="80" y="740">RML Example </drawString>-->
-            <setFont name="Helvetica-Oblique" size="12"/>
-            <image file="covetel.png" preserveAspectRatio="1" x="200" y="800" width="200" height="200"/>
-            <saveState/>
-            <stroke width="1" color="red"/>
-            <rect x="0" y="0" width="596" height="842" stroke="1" fill="0"/>
-            <restoreState/>
-        </pageGraphics>
+    <pageGraphics>
+        <setFont name="DejaVu Sans" size="8"/>
+        <image x="1.3cm" y="27.7cm" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
+        <place x="5cm" y="30 cm" height="2.55cm" width="19.0cm">
+        <fill color="black"/>
+        <stroke color="black"/>
+    </pageGraphics>
       	<frame id="first" x1="15.0" y1="42.0" width="539" height="758"/>
     </pageTemplate>
   </template>
@@ -23,7 +20,7 @@
     </blockTableStyle>
 
     <blockTableStyle id="Table1">
-      <blockAlignment value="LEFT"/>
+      <blockAlignment value="RIGHT"/>
       <blockValign value="TOP"/>
     </blockTableStyle>
 
@@ -187,10 +184,13 @@
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
+    <place x="250" y="400">
     <para style="terp_header"><b>[[ o.state not in ['draft','sent'] and removeParentNode('para') ]] Quotation N° [[ o.name ]]</b></para>
     <para style="terp_header"><b>[[ o.state in ['draft','sent'] and removeParentNode('para') ]] Order N° [[ o.name ]]</b></para>
-    <para style="terp_default_8">
-      <font color="white"> </font>
+    </place>
+   
+   <para style="terp_default_8">
+    <font color="white"> </font>
     </para>
     <blockTable colWidths="132.0,134.0,135.0,135.0" style="Table2">
       <tr>
