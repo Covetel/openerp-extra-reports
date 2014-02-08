@@ -2,5 +2,7 @@
 <openerp>
     <data>
         <report auto="False" id="extra_report_sale_order" model="sale.order" name="sale.order_extra" rml="openerp-extra-reports/report/sale_order.rml" string="Sale Order Extra" />
+
+        <report auto="False" header="False" id="account_invoices_extra" model="account.invoice" name="account_invoice_extra" rml="openerp-extra-reports/report/account_print_invoice_extra.rml" string="Extra Invoice" attachment="(object.state in ('open', 'paid')) and ('INV'+(object.number or '').replace('/', '')+'.pdf')" attachment_use="True" usage="default" /> 
     </data>
 </openerp>
