@@ -179,12 +179,12 @@ Cuenta Corriente Banco Mercantil No. 0105-0093-16-1093095946</td>
             <blockTable style="Table_Partner_Address">
                 <tr>
                     <td>
-                        <para style="terp_default_8">Nombre o Razon Social: [[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para>
+                        <para style="terp_default_8"><b>Nombre o Razon Social:</b> [[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <para style="terp_default_8">Dirección: [[ display_address(o.partner_id) ]]</para>
+                        <para style="terp_default_8"><b>Dirección:</b> [[ display_address(o.partner_id) ]]</para>
                     </td>
                 </tr>
             </blockTable>
