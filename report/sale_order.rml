@@ -1,17 +1,33 @@
-<?xml version="1.0"?>
+<?xml version="1.0"?>a
 <document filename="Sales Order.pdf">
-  <template pageSize="596,842" title="Sales Order" author="OpenERP S.A.(sales@openerp.com)" showBoundary="1">
-    <pageTemplate id="first" pageSize="596,842">
-    <pageGraphics>
-        <setFont name="DejaVu Sans" size="8"/>
-        <image x="1.3cm" y="27.7cm" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
-        <place x="5cm" y="30 cm" height="2.55cm" width="19.0cm">
-        <fill color="black"/>
-        <stroke color="black"/>
-    </pageGraphics>
-      	<frame id="first" x1="15.0" y1="42.0" width="539" height="758"/>
-    </pageTemplate>
-  </template>
+  <template title="Invoices" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
+           <pageTemplate id="main">
+               <stylesheet>
+                  <paraStyle name='Normal' fontName="DejaVu Sans"/>
+                  <paraStyle name="main_footer" fontSize="8.0" alignment="CENTER"/>
+                 <paraStyle name="main_header" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+              </stylesheet>
+              <pageGraphics>
+                  <setFont name="DejaVu Sans" size="8"/>
+                  <image x="1.3cm" y="25.7cm" width="80" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
+                  <fill color="black"/>
+                  <stroke color="black"/>
+  
+                  <!-- page header -->
+                  <drawRightString x="7.9cm" y="25.4cm">[[ company.rml_header1 ]]</drawRightString>
+                  <place x="1.3cm" y="24cm" height="1.8cm" width="15.0cm">
+                      <para style="main_header">[[ display_address(company.partner_id) or  '' ]]</para>
+                  </place>
+                  <drawString x="1.3cm" y="23.9cm">Phone:</drawString>
+                  <drawRightString x="7cm" y="23.9cm">[[ company.partner_id.phone or '' ]]</drawRightString>
+  
+                  <drawString x="1.3cm" y="23.53cm">Mail:</drawString>
+                  <drawRightString x="7cm" y="23.53cm">[[ company.partner_id.email or '' ]]</drawRightString>
+            </pageGraphics>
+              <frame id="first" x1="1.3cm" y1="1.3cm" height="22.0cm" width="19.0cm"/>
+         </pageTemplate>
+      </template>
+
   <stylesheet>
     <blockTableStyle id="Standard_Outline">
       <blockAlignment value="LEFT"/>
@@ -100,18 +116,19 @@
       <paraStyle name="all" alignment="justify"/>
     </initialize>
     <paraStyle name="terp_header" fontSize="15.0" leading="19" alignment="RIGHT" textColor="red" spaceBefore="12.0" spaceAfter="6.0"/>
-    <paraStyle name="terp_default_8" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="terp_default_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
-    <paraStyle name="terp_default_Centre_8" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>  
     <paraStyle name="terp_tblheader_Details" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
-    <paraStyle name="terp_tblheader_Details_Centre" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="terp_tblheader_Details_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
-    <paraStyle name="terp_default_Centre_9" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="terp_default_Right_9" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="terp_default_1" fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="terp_default_Right_9_Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_Details_Centre" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+
+    <paraStyle name="terp_default_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_8"  rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_9"  rightIndent="0.0" leftIndent="0.0"  fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9"  rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_1"  rightIndent="0.0" leftIndent="0.0"  fontSize="2.0" leading="3" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9_Bold"  rightIndent="0.0" leftIndent="0.0"  fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <images/>
   </stylesheet>
   <story>
@@ -119,25 +136,25 @@
   <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
   <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
   <pto_header>
-    <blockTable colWidths="181.0,70.0,80.0,70.0,50.0,85.0" repeatRows="1" style="Table4">
+    <blockTable colWidths="202.0,87.0,71.0,57.0,42.0,71.0" repeatRows="1" style="Table4">
       <tr>
         <td>
-          <para style="terp_tblheader_Details"><b>Description</b></para>
+          <para style="terp_header"><b>Description</b></para>
         </td>
         <td>
-          <para style="terp_tblheader_Details_Centre"><b>Tax</b></para>
+          <para style="terp_header"><b>Tax</b></para>
         </td>
         <td>
-          <para style="terp_tblheader_Details_Right"><b>Quantity</b></para>
+          <para style="terp_header"><b>Quantity</b></para>
         </td>
         <td>
-          <para style="terp_tblheader_Details_Right"><b>Unit Price</b></para>
+          <para style="terp_header"><b>Unit Price</b></para>
         </td>
         <td>
-          <para style="terp_tblheader_Details_Centre"><b>Disc.(%)</b></para>
+          <para style="terp_header"><b>Disc.(%)</b></para>
         </td>
         <td>
-          <para style="terp_tblheader_Details_Right"><b>Price</b></para>
+          <para style="terp_header"><b>Price</b></para>
         </td>
       </tr>
     </blockTable>
@@ -184,11 +201,11 @@
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
-    <place x="250" y="400">
+    
+
     <para style="terp_header"><b>[[ o.state not in ['draft','sent'] and removeParentNode('para') ]] Quotation N° [[ o.name ]]</b></para>
     <para style="terp_header"><b>[[ o.state in ['draft','sent'] and removeParentNode('para') ]] Order N° [[ o.name ]]</b></para>
-    </place>
-   
+
    <para style="terp_default_8">
     <font color="white"> </font>
     </para>
@@ -309,7 +326,7 @@
           </para>
         </td>
         <td>
-          <para style="terp_default_Bold_9"><b>Total :</b></para>
+          <para style="terp_default_9"><b>Total :</b></para>
         </td>
         <td>
           <para style="terp_default_Right_9_Bold"><b>[[ formatLang(o.amount_total, dp='Account', currency_obj=o.pricelist_id.currency_id) ]]</b></para>
