@@ -18,15 +18,15 @@
                 <stroke color="black"/>
 
                 <!-- page header -->
-                <drawRightString x="7.9cm" y="25.4cm">[[ company.rml_header1 ]]</drawRightString>
-                <place x="1.3cm" y="23.5cm" height="1.8cm" width="15.0cm">
+                <drawRightString x="7.9cm" y="25.3cm">[[ company.rml_header1 ]]</drawRightString>
+                <place x="1.3cm" y="23.4cm" height="1.8cm" width="15.0cm">
                     <para style="main_header">[[ display_address(company.partner_id) or  '' ]]</para>
                 </place>
-                <drawString x="1.3cm" y="23.9cm">Phone:</drawString>
-                <drawRightString x="7cm" y="23.9cm">[[ company.partner_id.phone or '' ]]</drawRightString>
+                <drawString x="1.3cm" y="23.8cm">Phone:</drawString>
+                <drawRightString x="7cm" y="23.8cm">[[ company.partner_id.phone or '' ]]</drawRightString>
 
-                <drawString x="1.3cm" y="23.53cm">Mail:</drawString>
-                <drawRightString x="7cm" y="23.53cm">[[ company.partner_id.email or '' ]]</drawRightString>
+                <drawString x="1.3cm" y="23.52cm">Mail:</drawString>
+                <drawRightString x="7cm" y="23.52cm">[[ company.partner_id.email or '' ]]</drawRightString>
 
                 <place x="1.3cm" y="0cm" width="19cm" height="3cm">
                     <blockTable style="table_footer">
@@ -130,7 +130,7 @@ Cuenta Corriente Banco Mercantil No. 0105-0093-16-1093095946</td>
         <paraStyle name="Caption" fontSize="10.0" leading="13" spaceBefore="6.0" spaceAfter="6.0"/>
         <paraStyle name="Index"/>
 
-        <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+        <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="RIGHT" spaceBefore="12.0" spaceAfter="6.0"/>
         <paraStyle name="terp_default_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
         <paraStyle name="Footer"/>
         <paraStyle name="Horizontal Line" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="14.0"/>
@@ -176,6 +176,16 @@ Cuenta Corriente Banco Mercantil No. 0105-0093-16-1093095946</td>
             </tr>
             </blockTable>
             </pto_header>
+            <para style="terp_header"><b>Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+            <para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
+            <para style="terp_header"><b>Draft Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
+            <para style="terp_header"><b>Cancelled Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+            <para style="terp_header"><b>Refund [[ (o.type=='out_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+            <para style="terp_header"><b>Supplier Refund [[ (o.type=='in_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+            <para style="terp_header"><b>Supplier Invoice [[ (o.type=='in_invoice' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+            <para style="terp_default_8">
+                <font color="white"> </font>
+            </para>
             <blockTable style="Table_Partner_Address">
                 <tr>
                     <td>
@@ -188,16 +198,6 @@ Cuenta Corriente Banco Mercantil No. 0105-0093-16-1093095946</td>
                     </td>
                 </tr>
             </blockTable>
-            <para style="terp_header"><b>Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
-            <para style="terp_header"><b>Draft Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
-            <para style="terp_header"><b>Cancelled Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>Refund [[ (o.type=='out_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>Supplier Refund [[ (o.type=='in_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>Supplier Invoice [[ (o.type=='in_invoice' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_default_8">
-                <font color="white"> </font>
-            </para>
             <blockTable colWidths="100, 100" style="Table_General_Detail_Content">
                 <tr>
                     <td>

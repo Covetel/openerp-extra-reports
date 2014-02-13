@@ -6,7 +6,9 @@
    'author': 'Covetel R.S',
    'website': 'http://www.covetel.com.ve',
    'depends': ['stock', 'procurement', 'board', 'sale'],
-   'data': [],
+   'data': [
+       'reports.xml',
+   ],
    'init_xml': [],
    'update_xml': [
        'reports.xml',
