@@ -29,4 +29,4 @@ class account_invoice(report_sxw.rml_parse):
             'time': time,
         })
 
-report_sxw.report_sxw('report.account_invoice_extra', 'account.invoice', 'addons/openerp-extra-reports/report/account_print_invoice_extra.rml', parser=account_invoice)
+report_sxw.report_sxw('report.account_invoice_extra', 'account.invoice', 'addons/openerp-extra-reports/report/account_print_invoice_extra.rml', parser=account_invoice, header="False")

@@ -18,7 +18,7 @@
                 <stroke color="black"/>
 
                 <!-- page header -->
-                <drawRightString x="7.9cm" y="25.3cm">[[ company.rml_header1 ]]</drawRightString>
+                <drawRightString x="8.55cm" y="25.3cm">[[ company.rml_header1 ]]</drawRightString>
                 <place x="1.3cm" y="23.4cm" height="1.8cm" width="15.0cm">
                     <para style="main_header">[[ display_address(company.partner_id) or  '' ]]</para>
                 </place>
