@@ -178,87 +178,77 @@
       <paraStyle name="Preformatted Text" fontSize="10.0" leading="13" spaceBefore="0.0" spaceAfter="0.0"/>
       <images/>
     </stylesheet>
+    
 
     <!-- STORY -->
     <story>
-        <pto>
-            <para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
-            <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
-            <pto_header><!-- Must be after setLang() -->
-            <blockTable colWidths="202.0,87.0,71.0,57.0,42.0,71.0" style="Table7">
-            <tr>
-                    <td><para style="terp_tblheader_Details"><b>Description</b></para></td>
-                    <td><para style="terp_tblheader_Details_Centre"><b>Taxes</b></para></td>
-                    <td><para style="terp_tblheader_Details_Centre"><b>Quantity</b></para></td>
-                    <td><para style="terp_tblheader_Details_Right"><b>Unit Price</b></para></td>
-                    <td><para style="terp_tblheader_Details_Right"><b>Disc.(%)</b></para></td>
-                    <td><para style="terp_tblheader_Details_Right"><b>Price</b></para></td>
-            </tr>
-            </blockTable>
-            </pto_header>
-            <para style="terp_header"><b>Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
-            <para style="terp_header"><b>Draft Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
-            <para style="terp_header"><b>Cancelled Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>Refund [[ (o.type=='out_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>Supplier Refund [[ (o.type=='in_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_header"><b>Supplier Invoice [[ (o.type=='in_invoice' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
-            <para style="terp_default_8">
-                <font color="white"> </font>
-            </para>
-            <blockTable style="Table_Partner_Address">
-                <tr>
-                    <td>
-                        <para style="terp_default_8"><b>Nombre o Razon Social:</b> [[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para style="terp_default_8"><b>Dirección:</b> [[ display_address(o.partner_id) ]]</para>
-                    </td>
-                </tr>
-            </blockTable>
-            <blockTable colWidths="100, 100" style="Table_General_Detail_Content">
-                <tr>
-                    <td>
-                        <para style="terp_tblheader_General_Right"><b>Invoice Date</b></para>
-                    </td>
-                    <td>
-                        <para style="terp_default_Right_9">[[ formatLang(o.date_invoice,date=True) ]]</para>
-                    </td>
-                </tr>
-            </blockTable>
-            <blockTable colWidths="80.0,70.0,185.0,60.0,50.0,85.0" style="Table7">
-                <tr>
-                    <td>
-                        <para style="terp_tblheader_General"><b>Quantity</b></para>
-                    </td>
-                    <td>
-                        <para style="terp_tblheader_General_Centre"><b></b></para>
-                    </td>
-                    <td>
-                        <para style="terp_tblheader_General"><b>Description</b></para>
-                    </td>
-                    <td>
-                        <para style="terp_tblheader_General_Right"><b>Unit Price</b></para>
-                    </td>
-                    <td>
-                        <para style="terp_tblheader_General_Right"><b>Disc.(%)</b></para>
-                    </td>
-                    <td>
-                        <para style="terp_tblheader_General_Right"><b>Price</b></para>
-                    </td>
-                </tr>
-            </blockTable>
+      <pto>
+	<para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
+	<para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
+	<pto_header><!-- Must be after setLang() -->
+	</pto_header>
+	<para style="terp_header"><b>Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+	<para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
+	<para style="terp_header"><b>Draft Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
+	<para style="terp_header"><b>Cancelled Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+	<para style="terp_header"><b>Refund [[ (o.type=='out_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+	<para style="terp_header"><b>Supplier Refund [[ (o.type=='in_refund' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+	<para style="terp_header"><b>Supplier Invoice [[ (o.type=='in_invoice' or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+
+	<blockTable style="Table_General_Detail_Content">
+	  <tr>
+	    <td>
+	      <para style="terp_tblheader_info"><b>Fecha de Emisión: </b>[[ formatLang(o.date_invoice,date=True) ]]</para>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <para style="terp_tblheader_info"><b>Contribuyente no sujeto</b></para>
+	    </td>
+	  </tr>
+	</blockTable>
+	<blockTable style="Table_Partner_Address">
+	  <tr>
+	    <td>
+	      <para style="terp_default_8"><b>Nombre o Razon Social:</b> [[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <para style="terp_default_8"><b>No.RIF o CED.No: </b> [[ o.partner_id.vat ]]</para>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+	      <para style="terp_default_8"><b>FORMA DE PAGO: </b> CONTADO</para>
+	    </td>
+	  </tr>
+	</blockTable>
+	<para style="Text body">
+	  <font color="white"> </font>
+	</para>
+	<blockTable colWidths="80.0,305.0,60.0,85.0" style="Table7_example" >
+	  <tr>
+	    <td>
+	      <para style="terp_tblheader_General"><b>CANTIDAD</b></para>
+	    </td>
+	    <td>
+	      <para style="terp_tblheader_General"><b>DESCRIPCIÓN</b></para>
+	    </td>
+	    <td>
+	      <para style="terp_tblheader_General_Right"><b>PRECIO UNITARIO</b></para>
+	    </td>
+	    <td>
+	      <para style="terp_tblheader_General_Right"><b>VALOR TOTAL</b></para>
+	    </td>
+	  </tr>
+	</blockTable>
             <section>
                 <para style="terp_default_2">[[ repeatIn(o.invoice_line,'l') ]]</para>
-                <blockTable colWidths="80.0,70.0,185.0,60.0,50.0,85.0" style="Table8">
+                <blockTable colWidths="80.0,305.0,60.0,85.0" style="Table8_example">
                     <tr>
                         <td>
                             <para style="terp_default_9">[[ formatLang(l.quantity)]] [[ (l.uos_id and l.uos_id.name) or '' ]]</para>
-                        </td>
-                        <td>
-                            <para style="terp_default_Centre_9"></para>
                         </td>
                         <td>
                             <para style="terp_default_9">[[ format(l.name) ]]</para>
@@ -267,53 +257,63 @@
                             <para style="terp_default_Right_9">[[ formatLang(l.price_unit) ]]</para>
                         </td>
                         <td>
-                            <para style="terp_default_Centre_9">[[ formatLang(l.discount, dp='Account') ]] </para>
-                        </td>
-                        <td>
                             <para style="terp_default_Right_9">[[ formatLang(l.price_subtotal, dp='Account', currency_obj=o.currency_id) ]]</para>
                         </td>
                     </tr>
                 </blockTable>
             </section>
-            <blockTable colWidths="385.0,60.0,85.0" style="Table10">
-                <tr>
-                    <td>
-                        <para style="terp_default_8">
-                            <font color="white"> </font>
-                        </para>
-                    </td>
-                    <td>
-                        <para style="terp_default_9">Net Total:</para>
-                    </td>
-                    <td>
-                        <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed, digits=get_digits(dp='Account'), currency_obj=o.currency_id) ]]</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para style="terp_default_8">
-                            <font color="white"> </font>
-                        </para>
-                    </td>
-                    <td>
-                        <para style="terp_default_9"><b>Total:</b></para>
-                    </td>
-                    <td>
-                        <para style="terp_default_Bold_Right_9"><b>[[ formatLang(o.amount_total, digits=get_digits(dp='Account'), currency_obj=o.currency_id) ]]</b></para>
-                    </td>
-                </tr>
-            </blockTable>
+	    <blockTable colWidths="300.0,145.0,85.0" style="Table10_example">
+	      <tr>
+		<td>
+		  <para style="terp_default_8">
+		    <font color="white"> </font>
+		  </para>
+		</td>
+		<td>
+		  <para style="terp_default_9_right"><b>SUB-TOTAL GRAVADO:</b></para>
+		</td>
+		<td>
+		  <para style="terp_default_Bold_Right_9"><b>[[ formatLang(o.amount_untaxed, digits=get_digits(dp='Account'), currency_obj=o.currency_id) ]]</b></para>
+		</td>
+	      </tr>
+	      <tr>
+		<td>
+		  <para style="terp_default_8">
+		    <font color="white"> </font>
+		  </para>
+		</td>
+		<td>
+		  <para style="terp_default_9_right"><b>IVA: </b></para>
+		</td>
+		<td>
+		  <para style="terp_default_Bold_Right_9"><b>[[ formatLang(o.amount_tax, digits=get_digits(dp='Account'), currency_obj=o.currency_id) ]]</b></para>
+		</td>
+	      </tr>
+	      <tr>
+		<td>
+		  <para style="terp_default_8">
+		    <font color="white"> </font>
+		  </para>
+		</td>
+		<td>
+		  <para style="terp_default_9_right"><b>TOTAL A PAGAR:</b></para>
+		</td>
+		<td>
+		  <para style="terp_default_Bold_Right_9"><b>[[ formatLang(o.amount_total, digits=get_digits(dp='Account'), currency_obj=o.currency_id) ]]</b></para>
+		</td>
+	      </tr>
+	    </blockTable>
             <para style="Text body">
                 <font color="white"> </font>
             </para>
             <para style="terp_default_9">
                 <font color="white"> </font>
             </para>
-            <para style="terp_default_9">[[ (o.comment and format(o.comment )) or removeParentNode('para') ]]</para>
+            <para style="terp_default_9"><b>Comentarios: [[ (o.comment and format(o.comment )) or removeParentNode('para') ]]</b></para>
             <para style="terp_default_8">
                 <font color="white"> </font>
             </para>
-            <para style="terp_default_9">[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]]</para>
+	    <para style="terp_default_9"><b>La presente factura deberá ser pagada en un lapso no mayor a ([[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]]) hábiles</b></para>
             <para style="terp_default_9">
                 <font color="white"> </font>
             </para>
@@ -322,4 +322,4 @@
             </para>
         </pto>
     </story>
-</document>
+  </document>
