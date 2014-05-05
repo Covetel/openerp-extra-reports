@@ -1,6 +1,6 @@
 {
    'name': 'Extra reports',
-   'version': '0.01',
+   'version': '0.02',
    'category': 'Reports',
    'description': "OpenERP module that adds reports to existing modules in OpenERP.",
    'author': 'Covetel R.S',
