@@ -187,7 +187,7 @@
 	<para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
 	<pto_header><!-- Must be after setLang() -->
 	</pto_header>
-	<para style="terp_header"><b>Invoice [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
+	<para style="terp_header"><b>Factura N: [[ ((o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')) or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
 	<para style="terp_header"><b>PRO-FORMA [[ ((o.type == 'out_invoice' and o.state == 'proforma2') or removeParentNode('para')) and '' ]]</b></para>
 	<para style="terp_header"><b>Draft Invoice [[ ((o.type == 'out_invoice' and o.state == 'draft') or removeParentNode('para')) and '' ]]</b></para>
 	<para style="terp_header"><b>Cancelled Invoice [[ ((o.type == 'out_invoice' and o.state == 'cancel') or removeParentNode('para')) and '' ]] [[ o.number ]]</b></para>
